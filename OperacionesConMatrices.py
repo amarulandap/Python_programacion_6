@@ -40,14 +40,14 @@ for j in range(4):
 
 # Declaraciones explicitas.
 matriz5 = [ ]
-for i in range(4):
+for i in range(3):
     fila = [ ]                              # Declaramos cada una de las filas.
     for j in range(3):
         fila = fila + [randint(0,9)]  # Concatenamos el contenido de la fila con un nuevo número.
     matriz5 = matriz5 + [fila]
 
 print("\n Matriz de números aleatorios:")
-for i in range(4):
+for i in range(3):
     print(matriz5[i])
 
 """Funciones del modulo numpy"""
@@ -131,4 +131,51 @@ print("la desviación estandar de los elementos del arreglo 1 es: ",format(std(a
 
 
 # Para ordenar una matriz por filas.
+arreglo7 = array(matriz5)
+print("\nMatriz ordenada por filas:",sort(arreglo7))
 
+
+# Para obtener la diagona de la matriz.
+print("Matriz 5:\n",arreglo7,'\n',
+      "Diagonal de la matriz 5: \n",diagonal(arreglo7))
+
+
+# Para hallar el determinante de una matriz.
+print('\n',
+      "Determinante de la matriz 5(Arreglo 7): ", format(linalg.det(arreglo7),".4f"))
+
+
+# Para hallar la matriz inversa.
+print('\n',
+      "Inversa de la matriz 5: ",linalg.inv(arreglo7))
+
+
+# Para hallar la matriz transpuesta.
+print('\n',
+      "Transpuesta de la matriz 5: ", transpose(arreglo7))
+
+
+# Para hallar la matriz triangular inferior.
+print('\n',
+      "Triangular inferior: \n",tril(arreglo7))
+
+
+# Para hallar la matriz triangular superior.
+print('\n',
+      "Triangular superior: \n",triu(arreglo7))
+
+
+# Para llenar una matriz de zeros.
+listaNula = [ ]
+matrizNula = array(listaNula)
+matrizNula = zeros([4,5], int)
+print("\n Matriz nula:",'\n',
+      matrizNula)
+
+
+# Hallar la matriz identidad con numeros reales y con numeros enteros.
+print('\n',
+      "Matriz identidad real: \n", identity(4))
+
+print('\n',
+      "Matriz identidad entera: \n", identity(4, int))

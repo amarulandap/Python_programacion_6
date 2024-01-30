@@ -6,7 +6,7 @@ def ingresarArticulo():
 
     while True:
 
-        registro = [ ]                      # Almacenar los datos de cada uno de los artículos.
+        registro = [ ]                                               # Almacenar los datos de cada uno de los artículos.
 
         codigoArticulo = ValidarEntero("\nCódigo del artículo: ", "Error, ingrese un código correcto.")
         registro.append(codigoArticulo)
@@ -14,14 +14,14 @@ def ingresarArticulo():
         unidades = ValidarEntero("Unidades: ", "Error, ingrese una cantidad correcta.")
         registro.append(unidades)
 
-        if unidades < 0:
+        if unidades < 0:                                             # Validamos que ingresen cantidades positivas.
             print("Error, ingrese una cantidad mayor que cero.")
             continue
 
         precio = ValidarEntero("Precio: ", "Error, ingrese un precio correcto.")
         registro.append(precio)
 
-        if precio < 0:
+        if precio < 0:                                              # Ingrese un precio positivo.
             print("Error, ingrese un precio correcto.")
             continue
 
@@ -37,8 +37,8 @@ def consultarArticulo(matrizArticulos):
 
     codigoArticulo = ValidarEntero("\nCódigo del artículo: ", "Error, ingrese un código correcto.")
 
-    encontrado = False
-    for i in range(len(matrizArticulos)):                 # Recorremos la matriz de artículos.
+    encontrado = False                                    # Controlar si fue encontrado o no.
+    for i in range(len(matrizArticulos)):                 # Recorremos las filas de la matriz de artículos.
         if codigoArticulo == matrizArticulos[i][0]:       # Validamos los valores de la primera columna.
             encontrado = True
             fila = i
@@ -62,13 +62,13 @@ def agregarCantidad(matrizArticulos):
 
         cantidad = ValidarEntero("Ingrese las unidades: ", "Error, ingrese una cantidad correcta")
 
-        if cantidad < 0:
+        if cantidad < 0:                                           # validamos que se ingresen 1 o más unidades.
             print("Error, ingrese una cantidad mayor que cero.")
 
-        encontrado = False
+        encontrado = False                                         # Validamos la existencia del artículo.
         for i in range(len(matrizArticulos)):
             if matrizArticulos[i][0] == codigoArticulo:
-                matrizArticulos[i][1] += cantidad
+                matrizArticulos[i][1] += cantidad                  # Sumamos la cantidad ingresada por el usuario.
                 encontrado = True
 
         if encontrado == False:
@@ -78,26 +78,26 @@ def agregarCantidad(matrizArticulos):
 
 
 # Función para vender un artículo.
-def venderArticulo(matrizArticulos):            # Restar la cantidad de artículos vendidos.
+def venderArticulo(matrizArticulos):                            # Restar la cantidad de artículos vendidos.
 
     codigoArticulo = ValidarEntero("\nCódigo del artículo: ", "Error, ingrese un código correcto.")
 
     cantidad = ValidarEntero("Ingrese las unidades: ", "Error, ingrese una cantidad correcta")
 
-    if cantidad < 0:
+    if cantidad < 0:                                            # Se vendan 1 o mas unidades.
         print("Error, ingrese una cantidad mayor que cero.")
 
     encontrado = False
     for i in range(len(matrizArticulos)):
         if matrizArticulos[i][0] == codigoArticulo:
-            matrizArticulos[i][1] -= cantidad
+            matrizArticulos[i][1] -= cantidad                   # Restamos la cantidad vendida.
             encontrado = True
-            costoVenta = matrizArticulos[i][2] * cantidad
+            costoVenta = matrizArticulos[i][2] * cantidad       # calcular el costo de venta.
 
     if encontrado == False:
         print("Artículo no encontrado.")
 
-    print("Total:", costoVenta)             # Indicar el costo de la venta.
+    print("Total:", costoVenta)                                 # Indicar el costo de la venta.
 
     return matrizArticulos
 
@@ -110,7 +110,7 @@ def eliminarArticulo(matrizArticulos):
     encontrado = False
     for i in range(len(matrizArticulos)):
         if matrizArticulos[i][0] == codigoArticulo:
-            del matrizArticulos[i]                  # Eliminamos el registro.
+            del matrizArticulos[i]                              # Eliminamos el registro.
             encontrado = True
 
     if encontrado == False:
@@ -118,7 +118,8 @@ def eliminarArticulo(matrizArticulos):
 
     return matrizArticulos
 
-# Crear el menú de opciones.
+
+# Crear el menú de opciones (Inicio del programa.)
 registros = [ ]                         # Es la tabla o matriz de artículos.
 while True:
 

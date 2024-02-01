@@ -1,0 +1,4 @@
+Hola mundo de los archivos secuenciales.
+Soy Andres Marulanda
+Soy programador y desarrollador web
+Código: 123 Cantidad: 20 Precio: 85000 Nombre: Los cuentos de la mamá grande

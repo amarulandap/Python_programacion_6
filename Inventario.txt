@@ -1,0 +1,3 @@
+Código: 123 Nombre: Alicate Precio: $20000 Cantidad: 20
+Código: 234 Nombre: Destornillador Precio: $17500 Cantidad: 40
+Código: 345 Nombre: Martillo Precio: $28600 Cantidad: 30
